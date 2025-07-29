@@ -1,0 +1,36 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Widget.SimpleBluetoothTerminal.AppWidget.Container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:theme="@style/AppTheme.AppWidgetContainer">
+
+    <!-- Horizontal LinearLayout to hold buttons side by side -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:layout_alignParentTop="true">
+
+        <!-- Button for Light toggle -->
+        <Button
+            android:id="@+id/toggle_light"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Light"
+            android:layout_gravity="center"
+            android:layout_weight="1" />
+
+        <!-- Button for Fan toggle -->
+        <Button
+            android:id="@+id/toggle_fan"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:text="Fan"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+</RelativeLayout>

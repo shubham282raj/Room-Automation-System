@@ -1,9 +1,13 @@
 package de.kai_morich.simple_bluetooth_terminal;
 
 import android.os.Bundle;
+import android.widget.Toast;
+
 import androidx.fragment.app.FragmentManager;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+
 
 public class MainActivity extends AppCompatActivity implements FragmentManager.OnBackStackChangedListener {
 

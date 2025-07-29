@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -16,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -25,6 +27,8 @@ import androidx.fragment.app.ListFragment;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import android.widget.Toast;
+
 
 public class DevicesFragment extends ListFragment {
 
@@ -51,11 +55,15 @@ public class DevicesFragment extends ListFragment {
                 TextView text1 = view.findViewById(R.id.text1);
                 TextView text2 = view.findViewById(R.id.text2);
                 @SuppressLint("MissingPermission") String deviceName = device.getName();
+                Log.i("myVar", deviceName);
                 text1.setText(deviceName);
                 text2.setText(device.getAddress());
                 return view;
             }
         };
+
+
+
         requestBluetoothPermissionLauncherForRefresh = registerForActivityResult(
                 new ActivityResultContracts.RequestPermission(),
                 granted -> BluetoothUtil.onPermissionsResult(this, granted, this::refresh));
